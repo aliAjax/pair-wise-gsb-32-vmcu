@@ -7,4 +7,7 @@ dist/
 .vscode/
 coverage/
 tsconfig.tsbuildinfo
-
+scripts/.sync-test.cjs
+scripts/.sync-test.mjs
+scripts/.smoke.cjs
+scripts/.smoke.mjs

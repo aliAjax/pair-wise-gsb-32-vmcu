@@ -4,5 +4,7 @@ export const STORAGE_KEYS = {
   spots: STORAGE_VERSION + ':spots',
   dayPlans: STORAGE_VERSION + ':dayPlans',
   theme: STORAGE_VERSION + ':theme',
+  syncState: STORAGE_VERSION + ':syncState',
+  syncSeeded: STORAGE_VERSION + ':syncSeeded',
 };
 
