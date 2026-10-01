@@ -28,6 +28,10 @@ export const useDayPlanStore = defineStore('dayPlan', {
       if (moved) day.items.splice(to, 0, moved);
       dayPlanApi.save(this.dayPlans);
     },
+    /** 外部（离线同步演示等）直接改动基线安排后显式持久化 */
+    persist() {
+      dayPlanApi.save(this.dayPlans);
+    },
   },
 });
 

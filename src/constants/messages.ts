@@ -6,5 +6,17 @@ export const messages = {
   emptySpots: '没有符合条件的景点。',
   budgetExceeded: '预算可能超支，请调整景点或交通方式',
   storageRecovered: '本地数据已恢复',
+  // 离线分段批次同步相关文案（SyncCenter、syncStore、TripDetail 共用）
+  pendingNotCounted: (count: number) => `${count} 处并列安排等待队长选定，选定前不计入预算和分享`,
+  invalidNotCounted: (count: number) => `${count} 处安排因景点停业或价格变化待确认，暂不计入预算和分享`,
+  batchCreated: '分段批次已建立（离线改动随队员记录）',
+  batchInterrupted: '批次在中断点暂停，再次处理时从上次完整结果继续',
+  batchCompleted: '批次完整重放完毕，已生成可查看的结果快照',
+  batchResumeNoDup: '已从中断点继续：重放同批不会产生重复安排',
+  changeRecorded: '离线改动已记录（成员、时刻与出发前版本已携带）',
+  leaderSelected: '队长已选定，该安排进入预算与分享',
+  leaderCleared: '已退回并列状态，该安排重新退出预算与分享',
+  revisionRegistered: '景点变化已登记，相关日期失效待确认',
+  revisionAcknowledged: '该日期已确认，重新按最新景点信息计入',
+  snapshotRestoredView: '正在查看历史合并结果（只读）',
 };
-

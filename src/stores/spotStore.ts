@@ -16,6 +16,14 @@ export const useSpotStore = defineStore('spot', {
     toggleFavorite(id: string) {
       this.favorites = this.favorites.includes(id) ? this.favorites.filter((item) => item !== id) : [...this.favorites, id];
     },
+    /** 景点价格变化后更新目录价；历史合并快照自带 priceMap，旧结果金额不受影响 */
+    updatePrice(id: string, price: number) {
+      const spot = this.spots.find((item) => item.id === id);
+      if (spot) {
+        spot.price = price;
+        spotApi.save(this.spots);
+      }
+    },
   },
 });
 

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 18417",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview --host 0.0.0.0 --port 18417"
+    "preview": "vite preview --host 0.0.0.0 --port 18417",
+    "test:logic": "esbuild scripts/sync.test.ts --bundle --platform=node --format=cjs --outfile=scripts/sync.test.cjs --log-level=warning && node scripts/sync.test.cjs"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^6.0.1",

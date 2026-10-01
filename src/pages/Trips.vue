@@ -10,7 +10,7 @@
     </div>
     <EmptyState v-if="!tripStore.filteredTrips.length" title="还没有旅行计划" :description="messages.emptyTrips" />
     <section class="grid">
-      <TripCard v-for="trip in tripStore.filteredTrips" :key="trip.id" :trip="trip" @open="open" @remove="tripStore.removeTrip" />
+      <TripCard v-for="trip in tripStore.filteredTrips" :key="trip.id" :trip="trip" @open="open" @sync="sync" @remove="tripStore.removeTrip" />
     </section>
   </main>
 </template>
@@ -25,5 +25,6 @@ const router = useRouter();
 const tripStore = useTripStore();
 function create() { router.push('/trip/' + tripStore.createTrip()); }
 function open(id: string) { router.push('/trip/' + id); }
+function sync(id: string) { router.push('/sync/' + id); }
 </script>
 
